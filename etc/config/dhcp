@@ -18,6 +18,10 @@ config dnsmasq
 	option filter_aaaa '0'
 	option rebind_protection '0'
 
+config domain
+	option name 'wpad'
+	option ip '192.168.0.254'
+
 config dhcp 'lan'
 	option interface 'lan'
 	option dhcpv4 'server'
