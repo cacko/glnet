@@ -4,11 +4,11 @@ function FindProxyForURL(url,host)
 
     // Access the internet directly for one site
 
-    if (dnsDomainIs(host, "cacko.net")) {
+    // if (dnsDomainIs(host, "cacko.net")) {
 
-        return "DIRECT";
+    //     return "DIRECT";
 
-    }
+    // }
 
     // No proxy for private (RFC 1918) IP addresses (intranet sites)
 
@@ -28,6 +28,6 @@ function FindProxyForURL(url,host)
 
     // Clean-up rule. Everything else uses a proxy. Note semi-colon delimiter between strings.
 
-    return "PROXY 192.168.0.254:8118; DIRECT";
+    return "PROXY 192.168.0.254:8118";
 
 }
