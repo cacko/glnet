@@ -1,0 +1,30 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  
+  push:
+    desc: commit and pushes current changes
+    cmds:
+      - git add .  || true
+      - git commit -am "$(curl -s https://commit.cacko.net/index.txt)" || true
+      - git push || true
+
+  deploy:
+    desc: deploy config
+    cmds:
+      - task: push
+      - scp ./www/proxy.pac $REMOTE_HOST:/www/proxy.pac
+      - scp ./etc/nginx/gl-conf.d/wdc.conf $REMOTE_HOST:/etc/nginx/gl-conf.d/wdc.conf
+      - ssh $REMOTE_HOST '/etc/init.d/nginx restart'
+      - scp ./etc/conf/dhcp $REMOTE_HOST:/etc/config/dhcp
+      - ssh $REMOTE_HOST '/etc/init.d/dnsmasq restart'
