@@ -29,7 +29,7 @@ config dhcp 'lan'
 	option start '120'
 	option limit '130'
 	option leasetime '720m'
-	list dhcp_option '252,http://glnet.cacko.net/proxy.pac'
+	list dhcp_option '252,http://192.168.0.254/proxy.pac'
 
 config dhcp 'wan'
 	option interface 'wan'

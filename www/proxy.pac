@@ -28,6 +28,6 @@ function FindProxyForURL(url,host)
 
     // Clean-up rule. Everything else uses a proxy. Note semi-colon delimiter between strings.
 
-    return "PROXY glnet.cacko.8118; DIRECT";
+    return "PROXY 192.168.0.254:8118; DIRECT";
 
 }
