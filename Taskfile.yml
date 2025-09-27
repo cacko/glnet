@@ -32,5 +32,5 @@ tasks:
       - scp ./www/proxy.pac $REMOTE_HOST:/www/proxy.pac
       - scp ./etc/nginx/gl-conf.d/wdc.conf $REMOTE_HOST:/etc/nginx/gl-conf.d/wdc.conf
       - ssh $REMOTE_HOST '/etc/init.d/nginx restart'
-      - scp ./etc/conf/dhcp $REMOTE_HOST:/etc/config/dhcp
+      - scp ./etc/config/dhcp $REMOTE_HOST:/etc/config/dhcp
       - ssh $REMOTE_HOST '/etc/init.d/dnsmasq restart'
