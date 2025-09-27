@@ -29,7 +29,7 @@ tasks:
     desc: deploy config
     cmds:
       - task: push
-      - scp ./www/proxy.pac $REMOTE_HOST:/www/proxy.pac
+      - scp ./www/wpad.dat $REMOTE_HOST:/www/wpad.dat
       - scp ./etc/nginx/gl-conf.d/wdc.conf $REMOTE_HOST:/etc/nginx/gl-conf.d/wdc.conf
       - ssh $REMOTE_HOST '/etc/init.d/nginx restart'
       - scp ./etc/config/dhcp $REMOTE_HOST:/etc/config/dhcp
