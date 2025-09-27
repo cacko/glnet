@@ -19,6 +19,12 @@ tasks:
       - git commit -am "$(curl -s https://commit.cacko.net/index.txt)" || true
       - git push || true
 
+  sync:
+    desc: sync with remote
+    cmds:
+      - scp $REMOTE_HOST:/etc/config/dhcp ./etc/config/dhcp || true
+      - task: push
+
   deploy:
     desc: deploy config
     cmds:
